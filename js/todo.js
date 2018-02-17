@@ -2,20 +2,20 @@
 
 let todoList = new TodoList();
 
-let inputEL = document.querySelectorAll('.todo__inputfield');
-let liste = document.getElementById('liste');
+ready(() => {
 
-/**
- *Höhrt auf Inputfeld.
- * Wenn Entertaste gedrückt wird und der String nicht leer ist
- * wird ein neuer Task mit dem Inputfeld Inhalt in der todoList erstellt
- */
-inputEL.addEventListener('keypress', function (e) {
-    //Wenn entertaste gedrückt wird und das Inputfeld nicht leer ist
-    if (e.value === 13 && e.value !== '') {
-        //dann schreibe einen neuen Task mit dem Inhalt des Inputfelds
-        todoList.addTask(e.value);
-        //anschliessend setze Inputfeld auf leer
-        inputEL.value = '';
-    }
+  let taskInputFields = document.querySelectorAll('.todo__inputfield');
+  let liste = document.getElementById('liste');
+
+  taskInputFields.forEach((inputEl) => {
+    // Auf Enter Taste hören
+    inputEl.addEventListener('keypress', e => {
+      if (e.keyCode === 13 && inputEl.value !== '') {
+        // task der Liste hinzufügen
+        todoList.addTask(inputEl.value);
+        // input wieder leeren
+        inputEl.value = '';
+      }
+    });
+  });
 });

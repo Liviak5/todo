@@ -1,14 +1,15 @@
 {
-  "name": "todopackage",
+  "name": "todo",
   "version": "1.0.0",
-  "description": "Todo Js App 2018",
+  "description": "",
   "main": "index.js",
+  "flat":true,
   "scripts": {
-    "test": "mocha"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Liviak5/todo.git"
+    "url": "git+https://github.com/Liviak5/todo.git"
   },
   "author": "",
   "license": "ISC",
@@ -16,12 +17,7 @@
     "url": "https://github.com/Liviak5/todo/issues"
   },
   "homepage": "https://github.com/Liviak5/todo#readme",
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.0.0",
-    "nyc": "^11.4.1"
-  },
   "dependencies": {
-    "todooo": "WebProfessionals/todooo"
+    "todooo": "WebProfessionals/todooo#^1.0.0"
   }
 }
