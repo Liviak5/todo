@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="scss/style.css" type="text/css" media="all">
     <title>todo app</title>
 </head>
+<script src="js/ready.js"></script>
+<script src="js/todo.js"></script>
+<script src="js/events.js"></script>
+
 <body>
 
     <header class="header">
@@ -16,7 +20,7 @@
     </header>
     <main class="todo">
         <input class="todo__inputfield" type="text" placeholder="Was muss getan werden?">
-        <ul>
+        <ul id="liste">
             <li class="todo__item">
                 <label class="todo__label">
                 <div class="todo__checkbox"><input class="checkbox__input" type="checkbox" value="done"></div>
