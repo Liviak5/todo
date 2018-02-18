@@ -2,17 +2,17 @@
 @import "fonts";
 @import "space";
 
-html{
+html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: $mainfont-family;
   font-size: 14px;
   font-weight: $mainfont-weight;
-  color:$primary-color;
+  color: $primary-color;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -23,12 +23,12 @@ html{
   box-sizing: inherit;
 }
 
-body{
+body {
   background: $secondary-color;
 }
 
-.header{
-  &__title{
+.header {
+  &__title {
     font-size: 100px;
     font-weight: $mainfont-weight;
     color: $highlight-color;
@@ -38,49 +38,49 @@ body{
   }
 }
 
-.todo{
+.todo {
   max-width: 500px;
   width: 50%;
   background-color: white;
   margin: 0 auto;
   border: 1px solid $border-color;
-  box-shadow: 0 8px 0 -5px white,0 9px 0 -5px $border-color, 1px 17px 0 -10px white, 1px 18px 0 -10px $border-color, 0 20px 20px -10px rgba(0, 0, 0, 0.2) ;
+  box-shadow: 0 8px 0 -5px white, 0 9px 0 -5px $border-color, 1px 17px 0 -10px white, 1px 18px 0 -10px $border-color, 0 20px 20px -10px rgba(0, 0, 0, 0.2);
   font-size: 1.71428571428514rem;
 
-  &__inputfield{
+  &__inputfield {
     padding: $space-simple 0 $space-simple 60px;
     font-weight: $mainfont-weight;
     border: none;
     width: 100%;
   }
 
-  &__inputfield::placeholder{
+  &__inputfield::placeholder {
     color: $placeholder-color;
     font-weight: $mainfont-weight;
     font-style: italic;
   }
 
-  &__item{
+  &__item {
     overflow: auto;
     list-style-type: none;
-    border-top:1px solid $border-color;
+    border-top: 1px solid $border-color;
     width: 100%;
     padding: $space-simple 0;
   }
 
-  &__label{
-  display: flex;
-  justify-content: space-between;
+  &__label {
+    display: flex;
+    justify-content: space-between;
   }
 
-  &__checkbox{
-    padding-left: $space-simple/2;
+  &__checkbox {
+    padding: 0 $space-simple/2;
     text-align: center;
     line-height: $space-simple*2;
     width: $space-simple*3;
   }
 
-  &__button{
+  &__button {
     padding-left: $space-simple/2;
     width: $space-simple*3;
     border: none;
@@ -90,32 +90,30 @@ body{
     background-color: transparent;
   }
 
-  &__labeltext{
+  &__labeltext {
     width: calc(100% - 120px);
     color: $primary-color;
     line-height: $space-simple*2;
     white-space: nowrap;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
     overflow: hidden;
   }
 
-  &__item:hover .todo__button::after{
+  &__item:hover .todo__button::after {
     content: "×";
   }
 }
 
-.checkbox{
-  &__input{
+.checkbox {
+  &__input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: $space-simple*1.5;
   }
-
-  &__input::after{
+  &__input::after {
     content: url("../media/if_uncheck.svg");
   }
-  &__input:checked::after{
+  &__input:checked::after {
     content: url("../media/if_check.svg");
   }
 }

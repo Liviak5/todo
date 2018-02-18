@@ -55,7 +55,7 @@ body {
     display: flex;
     justify-content: space-between; }
   .todo__checkbox {
-    padding-left: 10px;
+    padding: 0 10px;
     text-align: center;
     line-height: 40px;
     width: 60px; }
@@ -80,8 +80,7 @@ body {
 .checkbox__input {
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  width: 30px; }
+  appearance: none; }
 
 .checkbox__input::after {
   content: url("../media/if_uncheck.svg"); }
