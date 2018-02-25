@@ -74,15 +74,26 @@ body {
   }
 
   &__checkbox {
-    padding: 0 $space-simple/2;
+    padding: 0 $space-simple/1.5;
+    border: none;
     text-align: center;
     line-height: $space-simple*2;
     width: $space-simple*3;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    &::after {
+      content: url("../media/if_uncheck.svg");
+    }
+    &:checked::after {
+      content: url("../media/if_check.svg");
+    }
   }
 
   &__button {
     padding-left: $space-simple/2;
     width: $space-simple*3;
+    font-size: 2rem;
     border: none;
     text-align: center;
     color: $highlight-color;
@@ -101,19 +112,5 @@ body {
 
   &__item:hover .todo__button::after {
     content: "×";
-  }
-}
-
-.checkbox {
-  &__input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-  &__input::after {
-    content: url("../media/if_uncheck.svg");
-  }
-  &__input:checked::after {
-    content: url("../media/if_check.svg");
   }
 }

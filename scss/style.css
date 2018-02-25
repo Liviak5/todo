@@ -55,13 +55,22 @@ body {
     display: flex;
     justify-content: space-between; }
   .todo__checkbox {
-    padding: 0 10px;
+    padding: 0 13.33333px;
+    border: none;
     text-align: center;
     line-height: 40px;
-    width: 60px; }
+    width: 60px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+    .todo__checkbox::after {
+      content: url("../media/if_uncheck.svg"); }
+    .todo__checkbox:checked::after {
+      content: url("../media/if_check.svg"); }
   .todo__button {
     padding-left: 10px;
     width: 60px;
+    font-size: 2rem;
     border: none;
     text-align: center;
     color: #af2f2f;
@@ -76,14 +85,3 @@ body {
     overflow: hidden; }
   .todo__item:hover .todo__button::after {
     content: "×"; }
-
-.checkbox__input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; }
-
-.checkbox__input::after {
-  content: url("../media/if_uncheck.svg"); }
-
-.checkbox__input:checked::after {
-  content: url("../media/if_check.svg"); }
