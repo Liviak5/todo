@@ -46,14 +46,13 @@ body {
     font-weight: lighter;
     font-style: italic; }
   .todo__item {
+    display: flex;
+    justify-content: space-between;
     overflow: auto;
     list-style-type: none;
     border-top: 1px solid #ededed;
     width: 100%;
     padding: 20px 0; }
-  .todo__label {
-    display: flex;
-    justify-content: space-between; }
   .todo__checkbox {
     padding: 0 13.33333px;
     border: none;
@@ -65,7 +64,7 @@ body {
     appearance: none; }
     .todo__checkbox::after {
       content: url("../media/if_uncheck.svg"); }
-    .todo__checkbox:checked::after {
+    .todo__checkbox-checked::after {
       content: url("../media/if_check.svg"); }
   .todo__button {
     padding-left: 10px;

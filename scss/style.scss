@@ -61,16 +61,13 @@ body {
   }
 
   &__item {
+    display: flex;
+    justify-content: space-between;
     overflow: auto;
     list-style-type: none;
     border-top: 1px solid $border-color;
     width: 100%;
     padding: $space-simple 0;
-  }
-
-  &__label {
-    display: flex;
-    justify-content: space-between;
   }
 
   &__checkbox {
@@ -85,7 +82,7 @@ body {
     &::after {
       content: url("../media/if_uncheck.svg");
     }
-    &:checked::after {
+    &-checked::after {
       content: url("../media/if_check.svg");
     }
   }

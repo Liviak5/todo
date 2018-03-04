@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="normalize.css" type="text/css" media="all">
     <link rel="stylesheet" href="scss/style.css" type="text/css" media="all">
     <title>todo app</title>
-    <script src="node_modules/todooo/todo.js"></script>
-    <script src="js/ready.js"></script>
-    <script src="js/todo-front.js"></script>
+
 </head>
 <body>
 
@@ -20,13 +18,10 @@
 <main class="todo">
     <input class="todo__inputfield" type="text" placeholder="Was muss getan werden?">
     <ul id="liste">
-        <li class="todo__label todo__item">
-            <button class="todo__checkbox"></button>
-            <div class="todo__labeltext" title="hhh">hhhh</div>
-            <button class="todo__button"></button>
-        </li>
     </ul>
 </main>
-
+<script src="js/todo-model.js"></script>
+<script src="js/ready.js"></script>
+<script src="js/ui.js"></script>
 </body>
 </html>
