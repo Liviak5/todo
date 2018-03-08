@@ -1,8 +1,16 @@
 "use strict";
 
+let todoListe = new TodoList();
 let domListe = document.getElementById('liste');
-let inputfield = document.querySelectorAll('todo__inputfield');
+let inputfields;
 
+const ENTERTASTE = 13;
+
+/**
+ * erstellt einen neuen DOMTask
+ * @param task
+ * @returns {HTMLLIElement}
+ */
 let creatNewDomItem = (task) => {
     let item = document.createElement('li');
     item.classList = 'todo__item';
@@ -32,16 +40,53 @@ let creatNewDomItem = (task) => {
 
 };
 
+/**
+ * fügt einen Task der DOMListe hinzu
+ * @param task
+ */
 function addTasktoUI(task) {
     let newDomItem = creatNewDomItem(task);
     domListe.appendChild(newDomItem);
+}
+
+/**
+ * erstellt einen Neuen Task via Inputfeld und fügt ihn der Liste hinzu
+ * @param input
+ */
+let creatTaskViaInputfield = (input) => {
+    todoListe.addTask(input.value);
 };
 
+/**
+ * fügt bestehende Todoliste der Domliste hinzu
+ * @param taskListe
+ */
 let initTaskListeUi = (taskListe) => {
-    taskListe.forEach(task =>{
+    taskListe.forEach(task => {
         addTasktoUI(task);
     })
 };
 
 initTaskListeUi(todoListe.tasks);
 
+ready(() => {
+
+    inputfields = document.querySelectorAll('.todo__inputfield');
+
+    /**
+     * Prüft ob in einem Inputfield die Entertaste gedrückt wurde, erstellt einen neuen Task und
+     * leert das Inputfeld dann wieder
+     * @param inputTasten
+     */
+    inputfields.forEach(inputTotal =>{
+        inputTotal.addEventListener('keypress', inputTaste =>{
+            if (inputTaste.keyCode === ENTERTASTE && inputTotal.value !== '') {
+                creatTaskViaInputfield(inputTotal);
+                inputTotal.value = '';
+                let task = todoListe.tasks[todoListe.tasks.length-1];
+                addTasktoUI(task);
+            }
+        });
+    });
+
+});

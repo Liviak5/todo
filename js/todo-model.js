@@ -156,12 +156,6 @@ class TodoList {
 }
 
 
-let todoListe = new TodoList();
-todoListe.addTask('hallo');
-todoListe.addTask('hi');
-todoListe.addTask('nabour');
-
-
 // Machen wir nur für die Tests
 if (typeof module !== 'undefined'&& module) {
     module.exports.Task = Task;
