@@ -61,9 +61,10 @@ class TodoList {
 
     /**
      * Aktualisiert den Task ob er erledigt ist oder nicht
-     * @param index
+     * @param taskID
      */
-    updateTaskErledigt(index) {
+    updateTaskErledigt(taskID) {
+        let index = this.findIndexById(taskID);
         this.onUpdateTask(this.tasks[index]);
         if (this.tasks[index].erledigt === false) {
             this.tasks[index].erledigt = true;
@@ -74,10 +75,11 @@ class TodoList {
 
     /**
      * aktualisiert den Text eines Tasks
-     * @param index
+     * @param taskID
      * @param text
      */
-    updateTaskText(index, text) {
+    updateTaskText(taskID, text) {
+        let index = this.findIndexById(taskID);
         this.tasks[index].text = text;
         this.onUpdateTask(this.tasks[index]);
     }
@@ -96,14 +98,24 @@ class TodoList {
      * @param taskID
      */
     removeTaskByID(taskID) {
-        let idVergleich = (task)=>{
-            return task.id === taskID;
-        };
-        let index = this.tasks.findIndex(idVergleich);
+        let index = this.findIndexById(taskID);
         if(index >=0){
             this.removeTask(index);
         }
 
+    }
+
+    /**
+     * Findet den Index über die ID des Tasks
+     * @param taskID
+     * @returns {number}
+     */
+    findIndexById(taskID) {
+        let idVergleich = (task) => {
+            return task.id === taskID;
+        };
+        let index = this.tasks.findIndex(idVergleich);
+        return index;
     }
 
     /**

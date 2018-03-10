@@ -52,15 +52,15 @@ describe('Todo', function () {
             };
 
 
-            liste.updateTaskText(0, 'Halloween');
+            liste.updateTaskText(1, 'Halloween');
             expect(liste.tasks[0]._text).equal('Halloween');
             expect(check).equal(1);
 
-            liste.updateTaskErledigt(0);
+            liste.updateTaskErledigt(1);
             expect(liste.tasks[0].erledigt).equal(true);
             expect(check).equal(2);
 
-            liste.updateTaskErledigt(0);
+            liste.updateTaskErledigt(1);
             expect(liste.tasks[0].erledigt).equal(false);
             expect(check).equal(3);
 
@@ -188,12 +188,12 @@ describe('Todo', function () {
             let task = liste.addTask('Neue Aufgabe C');
 
             liste.updateTaskText(1, "neuer Text");
-            expect(liste.tasks[1].text).equal("neuer Text");
-            liste.tasks[1].text = "Hi";
-            expect(liste.tasks[1].text).equal("Hi");
+            expect(liste.tasks[0].text).equal("neuer Text");
+            liste.tasks[0].text = "Hi";
+            expect(liste.tasks[0].text).equal("Hi");
 
             liste.updateTaskText(2, 3);
-            expect(liste.tasks[2].text).equal("3");
+            expect(liste.tasks[1].text).equal("3");
         });
 
         it('Status eines Tasks aus Liste auf erledigt und unerledigt setzen können', function () {
@@ -202,13 +202,13 @@ describe('Todo', function () {
             liste.addTask('Neue Aufgabe B');
             let task = liste.addTask('Neue Aufgabe C');
 
-            liste.updateTaskErledigt(1);
+            liste.updateTaskErledigt(2);
             expect(liste.tasks[1].erledigt).equal(true);
 
-            liste.updateTaskErledigt(2);
+            liste.updateTaskErledigt(3);
             expect(liste.tasks[2].erledigt).equal(true);
 
-            liste.updateTaskErledigt(1);
+            liste.updateTaskErledigt(2);
             expect(liste.tasks[1].erledigt).equal(false);
 
         });
