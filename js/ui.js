@@ -83,7 +83,7 @@ let creatTaskViaInputfield = (input) => {
  */
 let initTaskListeUi = (taskListe) => {
     taskListe.forEach(task => {
-        addTasktoUIunsolved(task);
+        setUiList(task);
     })
 };
 
@@ -145,6 +145,9 @@ ready(() => {
         });
     });
 
+    /**
+     * ruft lösch und erledigt funktionen auf click auf
+     */
     domListe.addEventListener('click', e => {
         deleteTaskIfPossible(e);
         updateTaskErledigtIfPossible(e);

@@ -37,6 +37,7 @@ class Task {
 class TodoList {
     constructor() {
         this.tasks = [];
+        this.onInit(this);
     }
 
     /**
@@ -163,6 +164,10 @@ class TodoList {
 
     onUpdateTask(task) {
         return true;
+    }
+
+    onInit(){
+        return true
     }
 
 }
