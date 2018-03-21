@@ -52,9 +52,9 @@ class TodoList {
             t.id = ++lId;
         }
         let storageTask = this.onNewTask(t);
-        if (storageTask != false){
+        if (storageTask != false) {
             this.tasks.push(t);
-        } else  {
+        } else {
             return false;
         }
     }
@@ -65,12 +65,12 @@ class TodoList {
      */
     updateTaskErledigt(taskID) {
         let index = this.findIndexById(taskID);
-        this.onUpdateTask(this.tasks[index]);
         if (this.tasks[index].erledigt === false) {
             this.tasks[index].erledigt = true;
         } else {
             this.tasks[index].erledigt = false;
         }
+        this.onUpdateTask(this.tasks[index]);
     }
 
     /**
@@ -89,8 +89,8 @@ class TodoList {
      * @param index
      */
     removeTask(index) {
-        this.tasks.splice(index, 1);
         this.onDeleteTask(this.tasks[index]);
+        this.tasks.splice(index, 1);
     }
 
     /**
@@ -99,7 +99,7 @@ class TodoList {
      */
     removeTaskByID(taskID) {
         let index = this.findIndexById(taskID);
-        if(index >=0){
+        if (index >= 0) {
             this.removeTask(index);
         }
 
@@ -169,7 +169,7 @@ class TodoList {
 
 
 // Machen wir nur für die Tests
-if (typeof module !== 'undefined'&& module) {
+if (typeof module !== 'undefined' && module) {
     module.exports.Task = Task;
     module.exports.TodoList = TodoList;
 }

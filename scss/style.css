@@ -84,3 +84,6 @@ body {
     overflow: hidden; }
   .todo__item:hover .todo__button::after {
     content: "×"; }
+
+#liste--erledigt {
+  border-top: #af2f2f 1px solid; }

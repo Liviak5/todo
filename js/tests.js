@@ -133,7 +133,6 @@ describe('Todo', function () {
             expect(liste.tasks.length).equal(4);
 
             liste.removeTaskByID(3);
-            console.log(liste);
             expect(liste.tasks[2].id).equal(4);
             expect(liste.tasks[0].text).equal('Neue Aufgabe A');
             expect(liste.tasks.length).equal(3);

@@ -6,6 +6,7 @@ let domListeSolved = document.getElementById('liste--erledigt')
 let inputfields;
 
 const ENTERTASTE = 13;
+const ECAPETASTE = 27;
 
 /**
  * erstellt einen neuen DOMTask
@@ -110,6 +111,17 @@ let updateTaskErledigtIfPossible = e => {
     }
 };
 
+/**
+ * Prüft bei welchen Task der Text upgedatet werden soll und macht es auch
+ * @param e
+ */
+let updateTaskTextIfPossible = e =>{
+    if (e.target.classList.contains('todo__labeltext')){
+        let task = e.target.parentNode.task;
+        let newText = e.target.parentNode.textContent;
+        todoListe.updateTaskText(task.id,newText);
+    }
+};
 
 initTaskListeUi(todoListe.tasks);
 
@@ -142,6 +154,15 @@ ready(() => {
         deleteTaskIfPossible(e);
         updateTaskErledigtIfPossible(e);
     });
+
+    domListe.addEventListener('keyup', e =>{
+        if (e.keyCode === ECAPETASTE || e.keyCode === ENTERTASTE){
+            updateTaskTextIfPossible(e);
+            inputfields[0].focus();
+        }
+    })
+
+
 
 
 });
