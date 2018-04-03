@@ -16,9 +16,9 @@ todoListe.onDeleteTask = (task) => {
 };
 
 
-todoListe.onInit = (liste) =>{
-    for (let task in localStorage){
-        if (localStorage.hasOwnProperty(task)){
+function buildTaskListFromLocalstorage() {
+    for (let task in localStorage) {
+        if (localStorage.hasOwnProperty(task)) {
             let template = JSON.parse(localStorage.getItem(task));
             let t = new Task(template._text);
             t.id = template.id;
@@ -27,6 +27,10 @@ todoListe.onInit = (liste) =>{
             todoListe.tasks.push(t);
         }
     }
+}
+
+todoListe.onInit = (liste) =>{
+    buildTaskListFromLocalstorage();
     initTaskListeUi(todoListe.tasks);
 };
 todoListe.onInit(todoListe);
